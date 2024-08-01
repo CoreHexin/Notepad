@@ -19,7 +19,10 @@
                 FontSize="14"
                 Header="文件">
                 <MenuItem Command="{Binding NewNoteCommand}" Header="新建" />
-                <MenuItem Header="打开" />
+                <MenuItem
+                    x:Name="openFileButton"
+                    Click="openFileButton_Click"
+                    Header="打开" />
                 <MenuItem
                     x:Name="saveAsButton"
                     Click="saveAsButton_Click"

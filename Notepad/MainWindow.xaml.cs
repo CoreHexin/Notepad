@@ -25,13 +25,27 @@ namespace Notepad
         private void saveAsButton_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Title = "Save data in text file";
+            saveFileDialog.Title = "另存为";
             saveFileDialog.Filter = "Text files|*.txt";
             saveFileDialog.AddExtension = true;
+            saveFileDialog.ShowDialog();
 
-            if (saveFileDialog.ShowDialog() == true && !string.IsNullOrWhiteSpace(saveFileDialog.FileName))
+            if (!string.IsNullOrEmpty(saveFileDialog.FileName))
             {
                 File.WriteAllText(saveFileDialog.FileName, txtContent.Text, Encoding.UTF8);
+            }
+        }
+
+        private void openFileButton_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "打开文件";
+            openFileDialog.Filter = "Text files|*.txt";
+            openFileDialog.ShowDialog();
+
+            if (!string.IsNullOrEmpty(openFileDialog.FileName))
+            {
+                txtContent.Text = File.ReadAllText(openFileDialog.FileName, Encoding.UTF8);
             }
         }
     }
