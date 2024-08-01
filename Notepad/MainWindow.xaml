@@ -20,9 +20,15 @@
                 Header="文件">
                 <MenuItem Command="{Binding NewNoteCommand}" Header="新建" />
                 <MenuItem Header="打开" />
-                <MenuItem Header="保存" />
+                <MenuItem
+                    x:Name="saveAsButton"
+                    Click="saveAsButton_Click"
+                    Header="另存为" />
                 <Separator />
-                <MenuItem Header="退出" />
+                <MenuItem
+                    x:Name="exitButton"
+                    Click="exitButton_Click"
+                    Header="退出" />
             </MenuItem>
             <MenuItem
                 Margin="3"
@@ -56,6 +62,7 @@
         </Menu>
         <Grid>
             <TextBox
+                x:Name="txtContent"
                 AcceptsReturn="True"
                 FontSize="14"
                 Text="{Binding Content}" />
