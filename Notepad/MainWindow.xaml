@@ -50,10 +50,9 @@
                 Margin="3"
                 FontSize="14"
                 Header="查看">
-                <MenuItem Header="缩放">
-                    <MenuItem Header="放大" />
-                    <MenuItem Header="缩小" />
-                </MenuItem>
+                <MenuItem Command="{Binding ZoomInCommand}" Header="放大" />
+                <MenuItem Command="{Binding ZoomOutCommand}" Header="缩小" />
+                <MenuItem Command="{Binding ZoomDefaultCommand}" Header="恢复默认缩放" />
                 <MenuItem Header="状态栏" IsCheckable="True" />
                 <MenuItem
                     x:Name="textWrapButton"
@@ -73,7 +72,7 @@
             <TextBox
                 x:Name="txtContent"
                 AcceptsReturn="True"
-                FontSize="14"
+                FontSize="{Binding ContentFontsize}"
                 HorizontalScrollBarVisibility="Auto"
                 Text="{Binding Content}"
                 TextWrapping="Wrap"
