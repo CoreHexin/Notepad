@@ -63,5 +63,11 @@ namespace Notepad
                 txtContent.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
             }
         }
+
+        private void aboutUsButton_Click(object sender, RoutedEventArgs e)
+        {
+            var aboutUsWindow = new AboutWindow();
+            aboutUsWindow.ShowDialog();
+        }
     }
 }

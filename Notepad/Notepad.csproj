@@ -8,4 +8,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\notepad_icon_512.png" />
+    <None Remove="Images\notepad_icon_64.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\notepad_icon_512.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\notepad_icon_64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

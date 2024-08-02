@@ -10,6 +10,7 @@
     Width="800"
     Height="450"
     d:DataContext="{d:DesignInstance vm:MainWindowViewModel}"
+    Icon="/Images/notepad_icon_512.png"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <DockPanel>
@@ -53,7 +54,6 @@
                 <MenuItem Command="{Binding ZoomInCommand}" Header="放大" />
                 <MenuItem Command="{Binding ZoomOutCommand}" Header="缩小" />
                 <MenuItem Command="{Binding ZoomDefaultCommand}" Header="恢复默认缩放" />
-                <MenuItem Header="状态栏" IsCheckable="True" />
                 <MenuItem
                     x:Name="textWrapButton"
                     Click="textWrapButton_Click"
@@ -62,11 +62,11 @@
                     IsChecked="True" />
             </MenuItem>
             <MenuItem
+                x:Name="aboutUsButton"
                 Margin="3"
+                Click="aboutUsButton_Click"
                 FontSize="14"
-                Header="关于">
-                <MenuItem Header="关于" />
-            </MenuItem>
+                Header="关于" />
         </Menu>
         <Grid>
             <TextBox
