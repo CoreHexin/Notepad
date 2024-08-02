@@ -3,6 +3,7 @@ using Notepad.ViewModels;
 using System.IO;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Notepad
 {
@@ -46,6 +47,20 @@ namespace Notepad
             if (!string.IsNullOrEmpty(openFileDialog.FileName))
             {
                 txtContent.Text = File.ReadAllText(openFileDialog.FileName, Encoding.UTF8);
+            }
+        }
+
+        private void textWrapButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (textWrapButton.IsChecked == true)
+            {
+                txtContent.TextWrapping = TextWrapping.Wrap;
+                txtContent.HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden;
+            }
+            else
+            {
+                txtContent.TextWrapping = TextWrapping.NoWrap;
+                txtContent.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
             }
         }
     }

@@ -37,13 +37,14 @@
                 Margin="3"
                 FontSize="14"
                 Header="编辑">
-                <MenuItem Header="撤销" />
+                <MenuItem Command="Undo" Header="撤销" />
+                <MenuItem Command="Redo" Header="重做" />
                 <Separator />
-                <MenuItem Header="剪切" />
-                <MenuItem Header="复制" />
-                <MenuItem Header="粘贴" />
+                <MenuItem Command="Cut" Header="剪切" />
+                <MenuItem Command="Copy" Header="复制" />
+                <MenuItem Command="Paste" Header="粘贴" />
                 <Separator />
-                <MenuItem Header="全选" />
+                <MenuItem Command="SelectAll" Header="全选" />
             </MenuItem>
             <MenuItem
                 Margin="3"
@@ -54,7 +55,12 @@
                     <MenuItem Header="缩小" />
                 </MenuItem>
                 <MenuItem Header="状态栏" IsCheckable="True" />
-                <MenuItem Header="自动换行" IsCheckable="True" />
+                <MenuItem
+                    x:Name="textWrapButton"
+                    Click="textWrapButton_Click"
+                    Header="自动换行"
+                    IsCheckable="True"
+                    IsChecked="True" />
             </MenuItem>
             <MenuItem
                 Margin="3"
@@ -68,7 +74,11 @@
                 x:Name="txtContent"
                 AcceptsReturn="True"
                 FontSize="14"
-                Text="{Binding Content}" />
+                HorizontalScrollBarVisibility="Auto"
+                Text="{Binding Content}"
+                TextWrapping="Wrap"
+                UndoLimit="100"
+                VerticalScrollBarVisibility="Auto" />
         </Grid>
     </DockPanel>
 </Window>
