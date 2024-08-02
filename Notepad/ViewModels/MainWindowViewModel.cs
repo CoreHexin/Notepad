@@ -42,18 +42,18 @@ namespace Notepad.ViewModels
             _content = string.Empty;
             _contentFontsize = 14;
 
-            NewNoteCommand = new DelegateCommand((param) => { Content = string.Empty; });
-            ZoomInCommand = new DelegateCommand((param) => 
+            NewNoteCommand = new DelegateCommand(param => { Content = string.Empty; });
+            ZoomInCommand = new DelegateCommand(param => 
             { 
                 if (ContentFontsize <= 96)
                     ContentFontsize += 4; 
             });
-            ZoomOutCommand = new DelegateCommand((param) => 
+            ZoomOutCommand = new DelegateCommand(param => 
             { 
                 if (ContentFontsize > 4)
                     ContentFontsize -= 4; 
             });
-            ZoomDefaultCommand = new DelegateCommand((param) => { ContentFontsize = 14; });
+            ZoomDefaultCommand = new DelegateCommand(param => { ContentFontsize = 14; });
         }
 
 
